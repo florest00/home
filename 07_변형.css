@@ -1,0 +1,89 @@
+/* #test01 {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+} */
+
+#test01:hover {
+    /* transform: translate(100px, 100px); */
+    
+    /* 
+
+    요소변형 
+    translateX = X축으로 이동
+    translateY = Y축으로 이동
+    translate(X, Y값) = X, Y 축으로 이동 
+    ! 값을 하나만 쓰면 X축에 대해서만 설정됨
+
+    */
+
+    /* transform: scale(2,2); */
+
+    /* 
+    스케일변형
+    scaleX(n)= X축으로 n배 사이즈업
+    scaleY(n)= Y축으로 n배 사이즈업
+    scale(XY or X, Y) = 컴마유무에 상관없이 X, Y축으로 요소가 사이즈업됨
+    */
+
+    /* transform: rotate(45deg); */
+
+    /* 
+    화전
+    rotate(deg)= 양수, 음수값에 관계없이 회전가능
+    */
+
+    /* transform: skew(30deg, 35deg); */
+
+    /* 
+    비틀기
+    skewX(deg) = X축에 대하여 비틀기
+    skewY(deg) = Y축에 대하여 비틀기
+    skew(deg) = Y축에 대하여 비틀기
+    */
+
+    transform: perspective(300px) translateZ(100px);
+
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+}
+
+#test02:hover {
+    transform: perspective(300px) rotate3d(1, 0, 0, 45deg);
+    
+    /* transform: perspective(300px) translateZ(-100px); */
+    
+    /* 
+    translateZ = 3d 객체로써 인식이 되어야 보임
+    perspective를 추가해야 3d로 인식함.
+    
+
+    Z축은 내쪽으로 다가오거나 멀어짐.
+
+    translateZ(100px) = 내쪽으로 다가옴.
+
+    translateZ(-100px) = 흐려지면서 멀어짐
+
+    rotate3d(1,1,1 45deg);
+    rotate3d (x, y, z, deg)
+    1 = n축에 대해 회전하겠다.
+    0 = n축에 대해 회전하지 않겠다.
+    1, 0 = 참, 거짓 설정
+    */
+}
+
+#test03:hover {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    /* 
+    backface-visibility: hidden;
+    기본값은 visible이었다가, hidden 설정하면
+    회전 후 안보이게 됨.
+
+    -> 응용해서 카드 뒤집는 액션 가능
+    */
+}
